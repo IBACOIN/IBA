@@ -1,0 +1,13 @@
+[Desktop Entry]
+Version=1.0
+Name=IBA Coin
+Comment=IBACoin P2P Cryptocurrency
+Comment[fr]=IBACoin, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=IBACoin, eşten eşe kriptografik sanal para birimi
+Exec=ibacoin-qt %u
+Terminal=false
+Type=Application
+Icon=ibacoin128
+MimeType=x-scheme-handler/ibacoin;
+Categories=Office;Finance;
+StartupWMClass=ibacoin-qt

@@ -1,0 +1,3 @@
+usr/local/bin/ibacoind usr/bin
+usr/local/bin/ibacoin-cli usr/bin
+debian/examples/ibacoin.conf etc/ibacoin

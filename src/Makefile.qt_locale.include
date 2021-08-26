@@ -1,0 +1,14 @@
+QT_TS = \
+  qt/locale/ibacoin_de.ts \
+  qt/locale/ibacoin_en.ts \
+  qt/locale/ibacoin_en_US.ts \
+  qt/locale/ibacoin_es.ts \
+  qt/locale/ibacoin_es_ES.ts \
+  qt/locale/ibacoin_fr_FR.ts \
+  qt/locale/ibacoin_hr_HR.ts \
+  qt/locale/ibacoin_it.ts \
+  qt/locale/ibacoin_ko_KR.ts \
+  qt/locale/ibacoin_nl.ts \
+  qt/locale/ibacoin_pl.ts \
+  qt/locale/ibacoin_ru.ts \
+  qt/locale/ibacoin_zh_CN.ts

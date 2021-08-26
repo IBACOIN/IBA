@@ -1,0 +1,721 @@
+# Copyright (c) 2013-2016 The Bitcoin Core developers
+# Distributed under the MIT software license, see the accompanying
+# file COPYING or http://www.opensource.org/licenses/mit-license.php.
+
+bin_PROGRAMS += qt/ibacoin-qt
+EXTRA_LIBRARIES += qt/libbitcoinqt.a
+
+# ibacoin qt core #
+include Makefile.qt_locale.include
+
+QT_FORMS_UI = \
+  qt/forms/addressbookpage.ui \
+  qt/forms/askpassphrasedialog.ui \
+  qt/forms/coincontroldialog.ui \
+  qt/forms/editaddressdialog.ui \
+  qt/forms/helpmessagedialog.ui \
+  qt/forms/intro.ui \
+  qt/forms/openuridialog.ui \
+  qt/forms/optionsdialog.ui \
+  qt/forms/rpcconsole.ui \
+  qt/ibacoin/forms/loadingdialog.ui \
+  qt/ibacoin/forms/snackbar.ui \
+  qt/ibacoin/forms/navmenuwidget.ui \
+  qt/ibacoin/forms/lockunlock.ui \
+  qt/ibacoin/forms/expandablebutton.ui \
+  qt/ibacoin/forms/receivedialog.ui \
+  qt/ibacoin/forms/balancebubble.ui \
+  qt/ibacoin/forms/topbar.ui \
+  qt/ibacoin/forms/txrow.ui \
+  qt/ibacoin/forms/dashboardwidget.ui \
+  qt/ibacoin/forms/addresslabelrow.ui \
+  qt/ibacoin/forms/contactdropdownrow.ui \
+  qt/ibacoin/forms/mninfodialog.ui \
+  qt/ibacoin/forms/optionbutton.ui \
+  qt/ibacoin/forms/masternodewizarddialog.ui \
+  qt/ibacoin/forms/mnrow.ui \
+  qt/ibacoin/forms/masternodeswidget.ui \
+  qt/ibacoin/forms/myaddressrow.ui \
+  qt/ibacoin/forms/csrow.ui \
+  qt/ibacoin/forms/sendmemodialog.ui \
+  qt/ibacoin/forms/sendchangeaddressdialog.ui \
+  qt/ibacoin/forms/sendconfirmdialog.ui \
+  qt/ibacoin/forms/sendcustomfeedialog.ui \
+  qt/ibacoin/forms/sendmultirow.ui \
+  qt/ibacoin/forms/send.ui \
+  qt/ibacoin/forms/addnewaddressdialog.ui \
+  qt/ibacoin/forms/addnewcontactdialog.ui \
+  qt/ibacoin/forms/requestdialog.ui \
+  qt/ibacoin/forms/receivewidget.ui \
+  qt/ibacoin/forms/tooltipmenu.ui \
+  qt/ibacoin/forms/addresseswidget.ui \
+  qt/ibacoin/forms/defaultdialog.ui \
+  qt/ibacoin/forms/coldstakingwidget.ui \
+  qt/ibacoin/settings/forms/settingsbackupwallet.ui \
+  qt/ibacoin/settings/forms/settingsexportcsv.ui \
+  qt/ibacoin/settings/forms/settingsbittoolwidget.ui \
+  qt/ibacoin/settings/forms/settingsconsolewidget.ui \
+  qt/ibacoin/settings/forms/settingsdisplayoptionswidget.ui \
+  qt/ibacoin/settings/forms/settingsfaqwidget.ui \
+  qt/ibacoin/settings/forms/settingsinformationwidget.ui \
+  qt/ibacoin/settings/forms/settingsmainoptionswidget.ui \
+  qt/ibacoin/settings/forms/settingsmultisenddialog.ui \
+  qt/ibacoin/settings/forms/settingsmultisendwidget.ui \
+  qt/ibacoin/settings/forms/settingssignmessagewidgets.ui \
+  qt/ibacoin/settings/forms/settingswalletoptionswidget.ui \
+  qt/ibacoin/settings/forms/settingswalletrepairwidget.ui \
+  qt/ibacoin/settings/forms/settingswidget.ui \
+  qt/ibacoin/forms/welcomecontentwidget.ui \
+  qt/ibacoin/forms/splash.ui
+
+QT_MOC_CPP = \
+  qt/moc_addressbookpage.cpp \
+  qt/moc_addresstablemodel.cpp \
+  qt/moc_askpassphrasedialog.cpp \
+  qt/moc_bantablemodel.cpp \
+  qt/moc_bitcoinaddressvalidator.cpp \
+  qt/ibacoin/moc_ibacoingui.cpp \
+  qt/moc_bitcoinunits.cpp \
+  qt/moc_clientmodel.cpp \
+  qt/moc_coincontroldialog.cpp \
+  qt/moc_coincontroltreewidget.cpp \
+  qt/moc_csvmodelwriter.cpp \
+  qt/moc_editaddressdialog.cpp \
+  qt/moc_guiutil.cpp \
+  qt/moc_intro.cpp \
+  qt/moc_macdockiconhandler.cpp \
+  qt/moc_macnotificationhandler.cpp \
+  qt/moc_notificator.cpp \
+  qt/moc_openuridialog.cpp \
+  qt/moc_optionsdialog.cpp \
+  qt/moc_optionsmodel.cpp \
+  qt/moc_peertablemodel.cpp \
+  qt/moc_paymentserver.cpp \
+  qt/moc_qvalidatedlineedit.cpp \
+  qt/moc_qvaluecombobox.cpp \
+  qt/moc_recentrequeststablemodel.cpp \
+  qt/moc_rpcconsole.cpp \
+  qt/moc_trafficgraphwidget.cpp \
+  qt/moc_transactionfilterproxy.cpp \
+  qt/moc_transactiontablemodel.cpp \
+  qt/moc_utilitydialog.cpp \
+  qt/moc_walletmodel.cpp \
+  qt/ibacoin/moc_loadingdialog.cpp \
+  qt/ibacoin/moc_pwidget.cpp \
+  qt/ibacoin/moc_focuseddialog.cpp \
+  qt/ibacoin/moc_snackbar.cpp \
+  qt/ibacoin/moc_navmenuwidget.cpp \
+  qt/ibacoin/moc_lockunlock.cpp \
+  qt/ibacoin/moc_expandablebutton.cpp \
+  qt/ibacoin/moc_furabstractlistitemdelegate.cpp \
+  qt/ibacoin/moc_receivedialog.cpp \
+  qt/ibacoin/moc_pfborderimage.cpp \
+  qt/ibacoin/moc_topbar.cpp \
+  qt/ibacoin/moc_txrow.cpp \
+  qt/ibacoin/moc_dashboardwidget.cpp \
+  qt/ibacoin/moc_addresslabelrow.cpp \
+  qt/ibacoin/moc_contactdropdownrow.cpp \
+  qt/ibacoin/moc_mninfodialog.cpp \
+  qt/ibacoin/moc_optionbutton.cpp \
+  qt/ibacoin/moc_coldstakingmodel.cpp \
+  qt/ibacoin/moc_mnmodel.cpp \
+  qt/ibacoin/moc_masternodewizarddialog.cpp \
+  qt/ibacoin/moc_mnrow.cpp \
+  qt/ibacoin/moc_masternodeswidget.cpp \
+  qt/ibacoin/moc_myaddressrow.cpp \
+  qt/ibacoin/moc_csrow.cpp \
+  qt/ibacoin/moc_contactsdropdown.cpp \
+  qt/ibacoin/moc_sendchangeaddressdialog.cpp \
+  qt/ibacoin/moc_sendconfirmdialog.cpp \
+  qt/ibacoin/moc_sendcustomfeedialog.cpp \
+  qt/ibacoin/moc_sendmemodialog.cpp \
+  qt/ibacoin/moc_sendmultirow.cpp \
+  qt/ibacoin/moc_send.cpp \
+  qt/ibacoin/moc_addnewaddressdialog.cpp \
+  qt/ibacoin/moc_addnewcontactdialog.cpp \
+  qt/ibacoin/moc_requestdialog.cpp \
+  qt/ibacoin/moc_receivewidget.cpp \
+  qt/ibacoin/moc_tooltipmenu.cpp \
+  qt/ibacoin/moc_addresseswidget.cpp \
+  qt/ibacoin/moc_defaultdialog.cpp \
+  qt/ibacoin/moc_coldstakingwidget.cpp \
+  qt/ibacoin/settings/moc_settingsbackupwallet.cpp \
+  qt/ibacoin/settings/moc_settingsexportcsv.cpp \
+  qt/ibacoin/settings/moc_settingsbittoolwidget.cpp \
+  qt/ibacoin/settings/moc_settingsconsolewidget.cpp \
+  qt/ibacoin/settings/moc_settingsdisplayoptionswidget.cpp \
+  qt/ibacoin/settings/moc_settingsfaqwidget.cpp \
+  qt/ibacoin/settings/moc_settingsinformationwidget.cpp \
+  qt/ibacoin/settings/moc_settingsmainoptionswidget.cpp \
+  qt/ibacoin/settings/moc_settingsmultisenddialog.cpp \
+  qt/ibacoin/settings/moc_settingsmultisendwidget.cpp \
+  qt/ibacoin/settings/moc_settingssignmessagewidgets.cpp \
+  qt/ibacoin/settings/moc_settingswalletoptionswidget.cpp \
+  qt/ibacoin/settings/moc_settingswalletrepairwidget.cpp \
+  qt/ibacoin/settings/moc_settingswidget.cpp \
+  qt/ibacoin/moc_welcomecontentwidget.cpp \
+  qt/ibacoin/moc_splash.cpp
+
+BITCOIN_MM = \
+  qt/macdockiconhandler.mm \
+  qt/macnotificationhandler.mm
+
+QT_MOC = \
+  qt/ibacoin.moc \
+  qt/intro.moc \
+  qt/rpcconsole.moc \
+  qt/ibacoin/settings/moc_settingsconsolewidget.cpp
+
+QT_QRC_CPP = qt/qrc_ibacoin.cpp
+QT_QRC = qt/ibacoin.qrc
+QT_QRC_LOCALE_CPP = qt/qrc_ibacoin_locale.cpp
+QT_QRC_LOCALE = qt/ibacoin_locale.qrc
+
+PROTOBUF_CC = qt/paymentrequest.pb.cc
+PROTOBUF_H = qt/paymentrequest.pb.h
+PROTOBUF_PROTO = qt/paymentrequest.proto
+
+BITCOIN_QT_H = \
+  qt/addressbookpage.h \
+  qt/addresstablemodel.h \
+  qt/askpassphrasedialog.h \
+  qt/bantablemodel.h \
+  qt/bitcoinaddressvalidator.h \
+  qt/ibacoin/ibacoingui.h \
+  qt/bitcoinunits.h \
+  qt/clientmodel.h \
+  qt/coincontroldialog.h \
+  qt/coincontroltreewidget.h \
+  qt/csvmodelwriter.h \
+  qt/editaddressdialog.h \
+  qt/guiconstants.h \
+  qt/guiutil.h \
+  qt/intro.h \
+  qt/macdockiconhandler.h \
+  qt/macnotificationhandler.h \
+  qt/networkstyle.h \
+  qt/notificator.h \
+  qt/openuridialog.h \
+  qt/optionsdialog.h \
+  qt/optionsmodel.h \
+  qt/paymentrequestplus.h \
+  qt/paymentserver.h \
+  qt/peertablemodel.h \
+  qt/platformstyle.h \
+  qt/qvalidatedlineedit.h \
+  qt/qvaluecombobox.h \
+  qt/recentrequeststablemodel.h \
+  qt/rpcconsole.h \
+  qt/trafficgraphwidget.h \
+  qt/transactionfilterproxy.h \
+  qt/transactionrecord.h \
+  qt/transactiontablemodel.h \
+  qt/utilitydialog.h \
+  qt/walletmodel.h \
+  qt/walletmodeltransaction.h \
+  qt/ibacoin/prunnable.h \
+  qt/ibacoin/pfborderimage.h \
+  qt/ibacoin/loadingdialog.h \
+  qt/winshutdownmonitor.h \
+  qt/ibacoin/pwidget.h \
+  qt/ibacoin/focuseddialog.h \
+  qt/ibacoin/guitransactionsutils.h \
+  qt/ibacoin/snackbar.h \
+  qt/ibacoin/navmenuwidget.h \
+  qt/ibacoin/lockunlock.h \
+  qt/ibacoin/receivedialog.h \
+  qt/ibacoin/furlistrow.h \
+  qt/ibacoin/furabstractlistitemdelegate.h \
+  qt/ibacoin/txviewholder.h \
+  qt/ibacoin/qtutils.h \
+  qt/ibacoin/expandablebutton.h \
+  qt/ibacoin/balancebubble.h \
+  qt/ibacoin/topbar.h \
+  qt/ibacoin/txrow.h \
+  qt/ibacoin/addressholder.h \
+  qt/ibacoin/addressfilterproxymodel.h \
+  qt/ibacoin/dashboardwidget.h \
+  qt/ibacoin/addresslabelrow.h \
+  qt/ibacoin/contactdropdownrow.h \
+  qt/ibacoin/mninfodialog.h \
+  qt/ibacoin/optionbutton.h \
+  qt/ibacoin/coldstakingmodel.h \
+  qt/ibacoin/mnmodel.h \
+  qt/ibacoin/masternodewizarddialog.h \
+  qt/ibacoin/mnrow.h \
+  qt/ibacoin/masternodeswidget.h \
+  qt/ibacoin/myaddressrow.h \
+  qt/ibacoin/csrow.h \
+  qt/ibacoin/contactsdropdown.h \
+  qt/ibacoin/sendchangeaddressdialog.h \
+  qt/ibacoin/sendconfirmdialog.h \
+  qt/ibacoin/sendcustomfeedialog.h \
+  qt/ibacoin/sendmemodialog.h \
+  qt/ibacoin/sendmultirow.h \
+  qt/ibacoin/send.h \
+  qt/ibacoin/addnewaddressdialog.h \
+  qt/ibacoin/addnewcontactdialog.h \
+  qt/ibacoin/requestdialog.h \
+  qt/ibacoin/receivewidget.h \
+  qt/ibacoin/tooltipmenu.h \
+  qt/ibacoin/addresseswidget.h \
+  qt/ibacoin/defaultdialog.h \
+  qt/ibacoin/coldstakingwidget.h \
+  qt/ibacoin/settings/settingsbackupwallet.h \
+  qt/ibacoin/settings/settingsexportcsv.h \
+  qt/ibacoin/settings/settingsbittoolwidget.h \
+  qt/ibacoin/settings/settingsconsolewidget.h \
+  qt/ibacoin/settings/settingsdisplayoptionswidget.h \
+  qt/ibacoin/settings/settingsfaqwidget.h \
+  qt/ibacoin/settings/settingsinformationwidget.h \
+  qt/ibacoin/settings/settingsmainoptionswidget.h \
+  qt/ibacoin/settings/settingsmultisenddialog.h \
+  qt/ibacoin/settings/settingsmultisendwidget.h \
+  qt/ibacoin/settings/settingssignmessagewidgets.h \
+  qt/ibacoin/settings/settingswalletoptionswidget.h \
+  qt/ibacoin/settings/settingswalletrepairwidget.h \
+  qt/ibacoin/settings/settingswidget.h \
+  qt/ibacoin/welcomecontentwidget.h \
+  qt/ibacoin/splash.h
+
+RES_ICONS = \
+  qt/res/icons/bitcoin.ico \
+  qt/res/icons/bitcoin.png \
+  qt/res/icons/bitcoin_testnet.ico \
+  qt/res/icons/bitcoin_testnet.png \
+  qt/res/icons/bitcoin_regtest.png \
+  qt/res/icons/lock_closed.png \
+  qt/res/icons/lock_open.png \
+  qt/res/icons/overview.png \
+  qt/res/icons/ic-transaction-received.png \
+  qt/res/icons/ic-transaction-mint.png \
+  qt/res/icons/ic-transaction-sent.png \
+  qt/res/icons/ic-transaction-staked.png \
+  qt/ibacoin/res/img/bg-dashboard-banner.png \
+  qt/ibacoin/res/img/bg-multi-number-dark.png \
+  qt/ibacoin/res/img/ic-check-locked.png \
+  qt/ibacoin/res/img/ic-nav-address.png \
+  qt/ibacoin/res/img/ic-update.png \
+  qt/ibacoin/res/img/bg-multi-number.png \
+  qt/ibacoin/res/img/ic-check-mint-off.png \
+  qt/ibacoin/res/img/ic-nav-cold-staking.png \
+  qt/ibacoin/res/img/ic-nav-cold-staking-active.png \
+  qt/ibacoin/res/img/ic-nav-dashboard-active.png \
+  qt/ibacoin/res/img/ic-wallet-status-locked.png \
+  qt/ibacoin/res/img/bg-splash.png \
+  qt/ibacoin/res/img/ic-check-mint.png \
+  qt/ibacoin/res/img/ic-nav-dashboard-hover.png \
+  qt/ibacoin/res/img/ic-wallet-status-staking.png \
+  qt/ibacoin/res/img/ic-check-peers-off.png \
+  qt/ibacoin/res/img/ic-nav-dashboard.png \
+  qt/ibacoin/res/img/ic-wallet-status-unlocked.png \
+  qt/ibacoin/res/img/ic-check-peers.png \
+  qt/ibacoin/res/img/ic-nav-master-active.png \
+  qt/ibacoin/res/img/ic-watch-password-white.png \
+  qt/ibacoin/res/img/bg-welcome-container.jpg \
+  qt/ibacoin/res/img/bg-welcome-container.png \
+  qt/ibacoin/res/img/bg-welcome-container@2x.png \
+  qt/ibacoin/res/img/bg-welcome-container@3x.png \
+  qt/ibacoin/res/img/ic-check-staking-off.png \
+  qt/ibacoin/res/img/ic-nav-master-hover.png \
+  qt/ibacoin/res/img/ic-watch-password.png \
+  qt/ibacoin/res/img/bg-welcome.jpg \
+  qt/ibacoin/res/img/bg-welcome.png \
+  qt/ibacoin/res/img/bg-welcome@2x.jpg \
+  qt/ibacoin/res/img/bg-welcome@3x.jpg \
+  qt/ibacoin/res/img/ic-check-staking.png \
+  qt/ibacoin/res/img/ic-nav-master.png \
+  qt/ibacoin/res/img/btn-radio-active.png \
+  qt/ibacoin/res/img/ic-check-sync-off.png \
+  qt/ibacoin/res/img/ic-nav-privacy-active.png \
+  qt/ibacoin/res/img/img-empty-contacts.png \
+  qt/ibacoin/res/img/btn-radio-off.png \
+  qt/ibacoin/res/img/ic-check-sync.png \
+  qt/ibacoin/res/img/ic-nav-privacy-hover.png \
+  qt/ibacoin/res/img/img-empty-dark-contacts.png \
+  qt/ibacoin/res/img/ic-contact-arrow-down.png \
+  qt/ibacoin/res/img/ic-contact-arrow-down-white.png \
+  qt/ibacoin/res/img/ic-check-sync.png \
+  qt/ibacoin/res/img/ic-check-faq.png \
+  qt/ibacoin/res/img/ic-nav-privacy.png \
+  qt/ibacoin/res/img/img-empty-dark-error.png \
+  qt/ibacoin/res/img/ic-add-label.png \
+  qt/ibacoin/res/img/ic-pending.png \
+  qt/ibacoin/res/img/ic-check-theme-dark.png \
+  qt/ibacoin/res/img/ic-nav-receive-active.png \
+  qt/ibacoin/res/img/img-empty-dark-masternode.png \
+  qt/ibacoin/res/img/ic-add-liliac.png \
+  qt/ibacoin/res/img/ic-check-theme-light.png \
+  qt/ibacoin/res/img/ic-nav-receive-hover.png \
+  qt/ibacoin/res/img/img-empty-dark-multisend.png \
+  qt/ibacoin/res/img/ic-add-purple.png \
+  qt/ibacoin/res/img/ic-check-white.png \
+  qt/ibacoin/res/img/ic-nav-receive.png \
+  qt/ibacoin/res/img/img-empty-dark-peers.png \
+  qt/ibacoin/res/img/ic-add.png \
+  qt/ibacoin/res/img/ic-check.png \
+  qt/ibacoin/res/img/ic-nav-send-active.png \
+  qt/ibacoin/res/img/img-empty-dark-staking-off.png \
+  qt/ibacoin/res/img/img-empty-dark-staking-on.png \
+  qt/ibacoin/res/img/ic-address-book-grey.png \
+  qt/ibacoin/res/img/ic-chevron-left.png \
+  qt/ibacoin/res/img/ic-nav-send-hover.png \
+  qt/ibacoin/res/img/img-empty-dark-transactions.png \
+  qt/ibacoin/res/img/ic-address-book-white.png \
+  qt/ibacoin/res/img/ic-chevron-right.png \
+  qt/ibacoin/res/img/ic-chevron-right-liliac.png \
+  qt/ibacoin/res/img/ic-nav-send.png \
+  qt/ibacoin/res/img/img-empty-error.png \
+  qt/ibacoin/res/img/ic-address-book.png \
+  qt/ibacoin/res/img/ic-clear-liliac.png \
+  qt/ibacoin/res/img/ic-nav-settings-active.png \
+  qt/ibacoin/res/img/img-empty-masternode.png \
+  qt/ibacoin/res/img/ic-address-send-white.png \
+  qt/ibacoin/res/img/ic-clear-purple.png \
+  qt/ibacoin/res/img/ic-nav-settings-hover.png \
+  qt/ibacoin/res/img/img-empty-multisend.png \
+  qt/ibacoin/res/img/ic-address-send.png \
+  qt/ibacoin/res/img/ic-close-white.png \
+  qt/ibacoin/res/img/ic-nav-settings.png \
+  qt/ibacoin/res/img/img-empty-peers.png \
+  qt/ibacoin/res/img/img-empty-privacy.png \
+  qt/ibacoin/res/img/img-empty-privacy-dark.png \
+  qt/ibacoin/res/img/ic-arrow-drop-down-white.png \
+  qt/ibacoin/res/img/ic-close.png \
+  qt/ibacoin/res/img/ic-radio-liliac-on.png \
+  qt/ibacoin/res/img/img-empty-staking-off.png \
+  qt/ibacoin/res/img/ic-arrow-drop-down.png \
+  qt/ibacoin/res/img/ic-coin-iba.png \
+  qt/ibacoin/res/img/ic-receive-off.png \
+  qt/ibacoin/res/img/img-empty-staking-on.png \
+  qt/ibacoin/res/img/ic-arrow-drop-up-white.png \
+  qt/ibacoin/res/img/ic-receive-on.png \
+  qt/ibacoin/res/img/img-empty-transactions.png \
+  qt/ibacoin/res/img/ic-arrow-drop-up.png \
+  qt/ibacoin/res/img/ic-received.png \
+  qt/ibacoin/res/img/img-logo-ibacoin.png \
+  qt/ibacoin/res/img/ic-arrow-drop-white-down.png \
+  qt/ibacoin/res/img/ic-combo-box.png \
+  qt/ibacoin/res/img/ic-send.png \
+  qt/ibacoin/res/img/img-logo-ibacoin@2x.png \
+  qt/ibacoin/res/img/ic-arrow-purple-down.png \
+  qt/ibacoin/res/img/ic-connect.png \
+  qt/ibacoin/res/img/ic-submenu-lock.png \
+  qt/ibacoin/res/img/img-logo-ibacoin@3x.png \
+  qt/ibacoin/res/img/img-logo-ibacoin.png \
+  qt/ibacoin/res/img/ic-arrow-right-white.png \
+  qt/ibacoin/res/img/ic-arrow-left-white.png \
+  qt/ibacoin/res/img/ic-arrow-left.png \
+  qt/ibacoin/res/img/ic-copy-liliac.png \
+  qt/ibacoin/res/img/ic-submenu-staking.png \
+  qt/ibacoin/res/img/img-nav-logo-ibacoin.png \
+  qt/ibacoin/res/img/ic-arrow-right.png \
+  qt/ibacoin/res/img/ic-copy.png \
+  qt/ibacoin/res/img/ic-copy-big.png \
+  qt/ibacoin/res/img/ic-copy-big-white.png \
+  qt/ibacoin/res/img/ic-submenu-unlock.png \
+  qt/ibacoin/res/img/img-nav-logo.png \
+  qt/ibacoin/res/img/ic-arrow-white-left.png \
+  qt/ibacoin/res/img/ic-exit.png \
+  qt/ibacoin/res/img/ic-switch-liliac-on.png \
+  qt/ibacoin/res/img/img-nav-logo.png \
+  qt/ibacoin/res/img/ic-arrow-white-right.png \
+  qt/ibacoin/res/img/ic-expand.png \
+  qt/ibacoin/res/img/ic-switch-off.png \
+  qt/ibacoin/res/img/img-qr-test-big.png \
+  qt/ibacoin/res/img/ic-check-active.png \
+  qt/ibacoin/res/img/ic-folder.png \
+  qt/ibacoin/res/img/ic-switch-on.png \
+  qt/ibacoin/res/img/img-qr-test.png \
+  qt/ibacoin/res/img/ic-check-box.png \
+  qt/ibacoin/res/img/ic-check-box-dark-active.png \
+  qt/ibacoin/res/img/ic-check-box-indeterminate.png \
+  qt/ibacoin/res/img/ic-check-box-liliac-indeterminate.png \
+  qt/ibacoin/res/img/ic-label-liliac.png \
+  qt/ibacoin/res/img/ic-transaction-warning.png \
+  qt/ibacoin/res/img/ic-transaction-mint.png \
+  qt/ibacoin/res/img/ic-transaction-mint-inactive.png \
+  qt/ibacoin/res/img/ic-check-cold-staking.png \
+  qt/ibacoin/res/img/ic-check-cold-staking-off.png \
+  qt/ibacoin/res/img/ic-check-cold-staking-enabled.png \
+  qt/ibacoin/res/img/dark/ic-transaction-cs-contract.png \
+  qt/ibacoin/res/img/dark/ic-transaction-cs-contract-inactive.png \
+  qt/ibacoin/res/img/img-qr.png \
+  qt/ibacoin/res/img/ic-check-connect-off.png \
+  qt/ibacoin/res/img/ic-check-tor-off.png \
+  qt/ibacoin/res/img/ic-check-tor.png \
+  qt/ibacoin/res/img/ic-label.png \
+  qt/ibacoin/res/img/ic-transaction-received.png \
+  qt/ibacoin/res/img/dark/ic-transaction-received.png \
+  qt/ibacoin/res/img/dark/ic-transaction-warning.png \
+  qt/ibacoin/res/img/dark/ic-transaction-mint.png \
+  qt/ibacoin/res/img/dark/ic-transaction-mint-inactive.png \
+  qt/ibacoin/res/img/ic-transaction-received-inactive.png \
+  qt/ibacoin/res/img/dark/ic-transaction-received-inactive.png \
+  qt/ibacoin/res/img/img-welcome-step1.png \
+  qt/ibacoin/res/img/ic-check-connect.png \
+  qt/ibacoin/res/img/ic-menu-hover.png \
+  qt/ibacoin/res/img/ic-transaction-sent.png \
+  qt/ibacoin/res/img/ic-transaction-sent-inactive.png \
+  qt/ibacoin/res/img/dark/ic-transaction-sent.png \
+  qt/ibacoin/res/img/dark/ic-transaction-sent-inactive.png \
+  qt/ibacoin/res/img/img-welcome-step2.png \
+  qt/ibacoin/res/img/ic-check-dark.png \
+  qt/ibacoin/res/img/ic-mint.png \
+  qt/ibacoin/res/img/ic-transaction-staked.png \
+  qt/ibacoin/res/img/ic-transaction-staked-inactive.png \
+  qt/ibacoin/res/img/dark/ic-transaction-staked.png \
+  qt/ibacoin/res/img/dark/ic-transaction-staked-inactive.png \
+  qt/ibacoin/res/img/img-welcome-step3.png \
+  qt/ibacoin/res/img/ic-check-liliac-on.png \
+  qt/ibacoin/res/img/ic-nav-address-active.png \
+  qt/ibacoin/res/img/ic-unlock-staking.png \
+  qt/ibacoin/res/img/img-welcome-step4.png \
+  qt/ibacoin/res/img/ic-check-locked-off.png \
+  qt/ibacoin/res/img/ic-nav-address-hover.png \
+  qt/ibacoin/res/img/ic-update-liliac.png \
+  qt/ibacoin/res/img/ic-arrow-drop-down-purple.png \
+  qt/ibacoin/res/img/ic-arrow-drop-up-purple.png \
+  qt/ibacoin/res/img/ic-check-liliac-indeterminate.png \
+  qt/ibacoin/res/img/ic-check-box-liliac-indeterminate.png \
+  qt/ibacoin/res/img/ic-transaction-stake-delegated.png \
+  qt/ibacoin/res/img/ic-transaction-stake-delegated-inactive.png \
+  qt/ibacoin/res/img/ic-transaction-stake-hot.png \
+  qt/ibacoin/res/img/ic-transaction-stake-hot-inactive.png \
+  qt/ibacoin/res/img/dark/ic-transaction-stake-hot.png \
+  qt/ibacoin/res/img/dark/ic-transaction-stake-hot-inactive.png \
+  qt/ibacoin/res/img/dark/ic-transaction-stake-delegated.png \
+  qt/ibacoin/res/img/dark/ic-transaction-stake-delegated-inactive.png \
+  qt/ibacoin/res/img/ic-transaction-cs-contract.png \
+  qt/ibacoin/res/img/ic-transaction-cs-contract-inactive.png \
+  qt/ibacoin/res/img/ic-check-box-indeterminate.png \
+  qt/ibacoin/res/img/ic-information.png \
+  qt/ibacoin/res/img/ic-information-hover.png \
+  qt/ibacoin/res/img/ani-loading-dark.gif \
+  qt/ibacoin/res/img/ani-loading.gif
+
+BITCOIN_QT_BASE_CPP = \
+  qt/bantablemodel.cpp \
+  qt/bitcoinaddressvalidator.cpp \
+  qt/ibacoin/ibacoingui.cpp \
+  qt/bitcoinunits.cpp \
+  qt/clientmodel.cpp \
+  qt/csvmodelwriter.cpp \
+  qt/guiutil.cpp \
+  qt/intro.cpp \
+  qt/networkstyle.cpp \
+  qt/notificator.cpp \
+  qt/optionsdialog.cpp \
+  qt/optionsmodel.cpp \
+  qt/peertablemodel.cpp \
+  qt/platformstyle.cpp \
+  qt/qvalidatedlineedit.cpp \
+  qt/qvaluecombobox.cpp \
+  qt/rpcconsole.cpp \
+  qt/trafficgraphwidget.cpp \
+  qt/utilitydialog.cpp
+
+BITCOIN_QT_WINDOWS_CPP = qt/winshutdownmonitor.cpp
+
+BITCOIN_QT_WALLET_CPP = \
+  qt/addressbookpage.cpp \
+  qt/addresstablemodel.cpp \
+  qt/askpassphrasedialog.cpp \
+  qt/coincontroldialog.cpp \
+  qt/coincontroltreewidget.cpp \
+  qt/editaddressdialog.cpp \
+  qt/openuridialog.cpp \
+  qt/paymentrequestplus.cpp \
+  qt/paymentserver.cpp \
+  qt/recentrequeststablemodel.cpp \
+  qt/transactionfilterproxy.cpp \
+  qt/transactionrecord.cpp \
+  qt/transactiontablemodel.cpp \
+  qt/walletmodel.cpp \
+  qt/walletmodeltransaction.cpp \
+  qt/ibacoin/loadingdialog.cpp \
+  qt/ibacoin/pwidget.cpp \
+  qt/ibacoin/focuseddialog.cpp \
+  qt/ibacoin/guitransactionsutils.cpp \
+  qt/ibacoin/snackbar.cpp \
+  qt/ibacoin/navmenuwidget.cpp \
+  qt/ibacoin/lockunlock.cpp \
+  qt/ibacoin/receivedialog.cpp \
+  qt/ibacoin/furabstractlistitemdelegate.cpp \
+  qt/ibacoin/txviewholder.cpp \
+  qt/ibacoin/qtutils.cpp \
+  qt/ibacoin/expandablebutton.cpp \
+  qt/ibacoin/balancebubble.cpp \
+  qt/ibacoin/topbar.cpp \
+  qt/ibacoin/txrow.cpp \
+  qt/ibacoin/addressholder.cpp \
+  qt/ibacoin/addressfilterproxymodel.cpp \
+  qt/ibacoin/dashboardwidget.cpp \
+  qt/ibacoin/addresslabelrow.cpp \
+  qt/ibacoin/contactdropdownrow.cpp \
+  qt/ibacoin/contactsdropdown.cpp \
+  qt/ibacoin/optionbutton.cpp \
+  qt/ibacoin/mninfodialog.cpp \
+  qt/ibacoin/coldstakingmodel.cpp \
+  qt/ibacoin/mnmodel.cpp \
+  qt/ibacoin/masternodewizarddialog.cpp \
+  qt/ibacoin/mnrow.cpp \
+  qt/ibacoin/masternodeswidget.cpp \
+  qt/ibacoin/myaddressrow.cpp \
+  qt/ibacoin/csrow.cpp \
+  qt/ibacoin/sendchangeaddressdialog.cpp \
+  qt/ibacoin/sendconfirmdialog.cpp \
+  qt/ibacoin/sendcustomfeedialog.cpp \
+  qt/ibacoin/sendmemodialog.cpp \
+  qt/ibacoin/sendmultirow.cpp \
+  qt/ibacoin/send.cpp \
+  qt/ibacoin/addnewaddressdialog.cpp \
+  qt/ibacoin/addnewcontactdialog.cpp \
+  qt/ibacoin/requestdialog.cpp \
+  qt/ibacoin/receivewidget.cpp \
+  qt/ibacoin/tooltipmenu.cpp \
+  qt/ibacoin/addresseswidget.cpp \
+  qt/ibacoin/defaultdialog.cpp \
+  qt/ibacoin/coldstakingwidget.cpp \
+  qt/ibacoin/settings/settingsbackupwallet.cpp \
+  qt/ibacoin/settings/settingsexportcsv.cpp \
+  qt/ibacoin/settings/settingsbittoolwidget.cpp \
+  qt/ibacoin/settings/settingsconsolewidget.cpp \
+  qt/ibacoin/settings/settingsdisplayoptionswidget.cpp \
+  qt/ibacoin/settings/settingsfaqwidget.cpp \
+  qt/ibacoin/settings/settingsinformationwidget.cpp \
+  qt/ibacoin/settings/settingsmainoptionswidget.cpp \
+  qt/ibacoin/settings/settingsmultisenddialog.cpp \
+  qt/ibacoin/settings/settingsmultisendwidget.cpp \
+  qt/ibacoin/settings/settingssignmessagewidgets.cpp \
+  qt/ibacoin/settings/settingswalletoptionswidget.cpp \
+  qt/ibacoin/settings/settingswalletrepairwidget.cpp \
+  qt/ibacoin/settings/settingswidget.cpp \
+  qt/ibacoin/welcomecontentwidget.cpp \
+  qt/ibacoin/splash.cpp
+
+
+BITCOIN_QT_CPP = $(BITCOIN_QT_BASE_CPP)
+if TARGET_WINDOWS
+BITCOIN_QT_CPP += $(BITCOIN_QT_WINDOWS_CPP)
+endif
+if ENABLE_WALLET
+BITCOIN_QT_CPP += $(BITCOIN_QT_WALLET_CPP)
+endif
+
+RES_IMAGES = \
+  qt/res/images/about.png \
+  qt/res/images/splash.png \
+  qt/res/images/splash_testnet.png \
+  qt/res/images/splash_regtest.png
+
+RES_CSS = \
+  qt/res/css/default.css \
+  qt/ibacoin/res/css/style_dark.css \
+  qt/ibacoin/res/css/style_light.css
+
+BITCOIN_RC = qt/res/ibacoin-qt-res.rc
+
+BITCOIN_QT_INCLUDES = -I$(builddir)/qt -I$(srcdir)/qt -I$(srcdir)/qt/forms \
+  -I$(builddir)/qt/forms -DQT_NO_KEYWORDS
+
+qt_libbitcoinqt_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(BITCOIN_QT_INCLUDES) \
+  $(QT_INCLUDES) $(QT_DBUS_INCLUDES) $(PROTOBUF_CFLAGS) $(QR_CFLAGS) $(SVG_CFLAGS) $(CHARTS_CFLAGS)
+qt_libbitcoinqt_a_CXXFLAGS = $(AM_CXXFLAGS) $(QT_PIE_FLAGS)
+qt_libbitcoinqt_a_OBJCXXFLAGS = $(AM_OBJCXXFLAGS) $(QT_PIE_FLAGS)
+
+qt_libbitcoinqt_a_SOURCES = $(BITCOIN_QT_CPP) $(BITCOIN_QT_H) $(QT_FORMS_UI) \
+  $(QT_QRC) $(QT_QRC_LOCALE) $(QT_TS) $(PROTOBUF_PROTO) $(RES_ICONS) $(RES_IMAGES) $(RES_CSS)
+
+nodist_qt_libbitcoinqt_a_SOURCES = $(QT_MOC_CPP) $(QT_MOC) $(PROTOBUF_CC) \
+  $(PROTOBUF_H) $(QT_QRC_CPP) $(QT_QRC_LOCALE_CPP)
+
+# forms/foo.h -> forms/ui_foo.h
+QT_FORMS_H=$(join $(dir $(QT_FORMS_UI)),$(addprefix ui_, $(notdir $(QT_FORMS_UI:.ui=.h))))
+
+# Most files will depend on the forms and moc files as includes. Generate them
+# before anything else.
+$(QT_MOC): $(QT_FORMS_H)
+$(qt_libbitcoinqt_a_OBJECTS) $(qt_ibacoin_qt_OBJECTS) : | $(QT_MOC)
+
+#Generating these with a half-written protobuf header leads to wacky results.
+#This makes sure it's done.
+$(QT_MOC): $(PROTOBUF_H)
+$(QT_MOC_CPP): $(PROTOBUF_H)
+
+# ibacoin-qt binary #
+qt_ibacoin_qt_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(BITCOIN_QT_INCLUDES) \
+  $(QT_INCLUDES) $(PROTOBUF_CFLAGS) $(QR_CFLAGS) $(SVG_CFLAGS) $(CHARTS_CFLAGS)
+qt_ibacoin_qt_CXXFLAGS = $(AM_CXXFLAGS) $(QT_PIE_FLAGS)
+
+qt_ibacoin_qt_SOURCES = qt/ibacoin.cpp
+if TARGET_DARWIN
+  qt_ibacoin_qt_SOURCES += $(BITCOIN_MM)
+endif
+if TARGET_WINDOWS
+  qt_ibacoin_qt_SOURCES += $(BITCOIN_RC)
+endif
+qt_ibacoin_qt_LDADD = qt/libbitcoinqt.a $(LIBBITCOIN_SERVER)
+if ENABLE_WALLET
+qt_ibacoin_qt_LDADD += $(LIBBITCOIN_UTIL) $(LIBBITCOIN_WALLET)
+endif
+if ENABLE_ZMQ
+qt_ibacoin_qt_LDADD += $(LIBBITCOIN_ZMQ) $(ZMQ_LIBS)
+endif
+qt_ibacoin_qt_LDADD += $(LIBBITCOIN_CLI) $(LIBBITCOIN_COMMON) $(LIBBITCOIN_UTIL) $(LIBBITCOIN_CRYPTO) $(LIBUNIVALUE) $(LIBSAPLING) $(LIBRUSTZCASH) $(LIBZCASH_LIBS) $(LIBLEVELDB) $(LIBLEVELDB_SSE42) $(LIBMEMENV) \
+  $(BOOST_LIBS) $(QT_LIBS) $(QT_DBUS_LIBS) $(QR_LIBS) $(PROTOBUF_LIBS) $(SVG_LIBS) $(CHARTS_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(LIBSECP256K1) \
+  $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS)
+qt_ibacoin_qt_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(QT_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+qt_ibacoin_qt_LIBTOOLFLAGS = $(AM_LIBTOOLFLAGS) --tag CXX
+
+#locale/foo.ts -> locale/foo.qm
+QT_QM=$(QT_TS:.ts=.qm)
+
+SECONDARY: $(QT_QM)
+
+$(srcdir)/qt/ibacoinstrings.cpp: $(libbitcoin_server_a_SOURCES) $(libbitcoin_wallet_a_SOURCES) $(libbitcoin_common_a_SOURCES) $(libbitcoin_zmq_a_SOURCES) $(libbitcoin_util_a_SOURCES)
+	@test -n $(XGETTEXT) || echo "xgettext is required for updating translations"
+	$(AM_V_GEN) cd $(srcdir); XGETTEXT=$(XGETTEXT) PACKAGE_NAME="$(PACKAGE_NAME)" $(PYTHON) ../share/qt/extract_strings_qt.py $^
+
+translate: $(srcdir)/qt/ibacoinstrings.cpp $(QT_FORMS_UI) $(QT_FORMS_UI) $(BITCOIN_QT_BASE_CPP) qt/ibacoin.cpp $(BITCOIN_QT_WINDOWS_CPP) $(BITCOIN_QT_WALLET_CPP) $(BITCOIN_QT_H) $(BITCOIN_MM)
+	@test -n $(LUPDATE) || echo "lupdate is required for updating translations"
+	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(LUPDATE) $^ -locations relative -no-obsolete -ts $(srcdir)/qt/locale/ibacoin_en.ts
+
+$(QT_QRC_LOCALE_CPP): $(QT_QRC_LOCALE) $(QT_QM)
+	@test -f $(RCC)
+	@cp -f $< $(@D)/temp_$(<F)
+	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(RCC) -name ibacoin_locale $(@D)/temp_$(<F) | \
+	  $(SED) -e '/^\*\*.*Created:/d' -e '/^\*\*.*by:/d' > $@
+	@rm $(@D)/temp_$(<F)
+
+$(QT_QRC_CPP): $(QT_QRC) $(QT_FORMS_H) $(RES_ICONS) $(RES_IMAGES) $(RES_CSS) $(PROTOBUF_H)
+	@test -f $(RCC)
+	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(RCC) -name ibacoin $< | \
+	  $(SED) -e '/^\*\*.*Created:/d' -e '/^\*\*.*by:/d' > $@
+
+CLEAN_QT = $(nodist_qt_libbitcoinqt_a_SOURCES) $(QT_QM) $(QT_FORMS_H) qt/*.gcda qt/*.gcno qt/ibacoin/*.gcda qt/ibacoin/*.gcno qt/ibacoin/settings/*.gcda qt/ibacoin/settings/*.gcno qt/temp_ibacoin_locale.qrc
+
+CLEANFILES += $(CLEAN_QT)
+
+ibacoin_qt_clean: FORCE
+	rm -f $(CLEAN_QT) $(qt_libbitcoinqt_a_OBJECTS) $(qt_ibacoin_qt_OBJECTS) qt/ibacoin-qt$(EXEEXT) $(LIBBITCOINQT)
+
+ibacoin_qt : qt/ibacoin-qt$(EXEEXT)
+
+ui_%.h: %.ui
+	@test -f $(UIC)
+	@$(MKDIR_P) $(@D)
+	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(UIC) -o $@ $< || (echo "Error creating $@"; false)
+
+%.moc: %.cpp
+	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(MOC) $(DEFAULT_INCLUDES) $(QT_INCLUDES) $(MOC_DEFS) $< | \
+	  $(SED) -e '/^\*\*.*Created:/d' -e '/^\*\*.*by:/d' > $@
+
+moc_%.cpp: %.h
+	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(MOC) $(DEFAULT_INCLUDES) $(QT_INCLUDES) $(MOC_DEFS) $< | \
+	  $(SED) -e '/^\*\*.*Created:/d' -e '/^\*\*.*by:/d' > $@
+
+%.qm: %.ts
+	@test -f $(LRELEASE)
+	@$(MKDIR_P) $(@D)
+	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(LRELEASE) -silent $< -qm $@

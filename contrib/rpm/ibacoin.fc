@@ -1,0 +1,8 @@
+/usr/bin/ibacoin-cli		--	gen_context(system_u:object_r:ibacoin_exec_t,s0)
+/usr/sbin/ibacoind		--	gen_context(system_u:object_r:ibacoin_exec_t,s0)
+/usr/lib(64)?/ibacoin/ibacoind		--	gen_context(system_u:object_r:ibacoin_exec_t,s0)
+
+/etc/ibacoin(/.*)?		gen_context(system_u:object_r:ibacoin_conf_t,s0)
+/var/lib/ibacoin(/.*)?		gen_context(system_u:object_r:ibacoin_var_lib_t,s0)
+
+(/var)?/run/ibacoind(/.*)?   gen_context(system_u:object_r:ibacoin_var_run_t,s0)

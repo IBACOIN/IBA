@@ -1,0 +1,6 @@
+usr/local/bin/ibacoin-qt usr/bin
+share/pixmaps/ibacoin32.xpm usr/share/pixmaps
+share/pixmaps/ibacoin16.xpm usr/share/pixmaps
+share/pixmaps/ibacoin128.png usr/share/pixmaps
+debian/ibacoin-qt.desktop usr/share/applications
+debian/ibacoin-qt.protocol usr/share/kde4/services/
