@@ -1686,9 +1686,9 @@ Are you sure?</source>
     </message>
     <message>
         <source>Language missing or translation incomplete? Help contributing translations here:
-https://www.transifex.com/ibacoin-project/ibacoin-project-translations</source>
+https://www.transifex.com/IBACOIN/IBA-project-translations</source>
         <translation>语言缺失或翻译不完整?帮助贡献翻译在这里:
-https://www.transifex.com/ibacoin-project/ibacoin-project-translations</translation>
+https://www.transifex.com/IBACOIN/IBA-project-translations</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>

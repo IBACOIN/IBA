@@ -49,10 +49,10 @@ git config --global user.email "MY_NAME@example.com"
 Fetching the Build Script
 --------------------------
 
-The build script we'll be using is contained in the IBACoin github repository ([contrib/gitian-build.py](https://github.com/ibacoin-project/ibacoin/blob/master/contrib/gitian-build.py)). Since this is a completely fresh environment, we haven't yet cloned the IBACoin repository and will need to fetch this script with the following commands:
+The build script we'll be using is contained in the IBACoin github repository ([contrib/gitian-build.py](https://github.com/IBACOIN/IBA/blob/master/contrib/gitian-build.py)). Since this is a completely fresh environment, we haven't yet cloned the IBACoin repository and will need to fetch this script with the following commands:
 
 ```bash
-curl -L -O https://raw.githubusercontent.com/IBACoin-Project/IBACoin/master/contrib/gitian-build.py
+curl -L -O https://raw.githubusercontent.com/IBACOIN/IBA/master/contrib/gitian-build.py
 chmod +x gitian-build.py
 ```
 

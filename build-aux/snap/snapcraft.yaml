@@ -106,7 +106,7 @@ parts:
       - fcitx-frontend-qt5
 
   ibacoin-core:
-    source: https://github.com/IBACoin-Project/IBACoin
+    source: https://github.com/IBACOIN/IBA
     source-type: git
     source-tag: master
     plugin: nil

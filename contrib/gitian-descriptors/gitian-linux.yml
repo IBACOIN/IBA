@@ -33,7 +33,7 @@ packages:
 - "ca-certificates"
 - "python3"
 remotes:
-- "url": "https://github.com/ibacoin-project/ibacoin.git"
+- "url": "https://github.com/IBACOIN/IBA.git"
   "dir": "ibacoin"
 files: []
 script: |

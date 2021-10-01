@@ -1857,9 +1857,9 @@ STAKING</translation>
     </message>
     <message>
         <source>Language missing or translation incomplete? Help contributing translations here:
-https://www.transifex.com/ibacoin-project/ibacoin-project-translations</source>
+https://www.transifex.com/IBACOIN/IBA-project-translations</source>
         <translation>Sprache fehlt oder ist unvollständig? Helfe mit und trage zur Übersetzung bei unter:
-https://www.transifex.com/ibacoin-project/ibacoin-project-translations</translation>
+https://www.transifex.com/IBACOIN/IBA-project-translations</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
