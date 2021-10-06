@@ -3,12 +3,13 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef IBACoin_TEST_TEST_IBACoin_H
-#define IBACoin_TEST_TEST_IBACoin_H
+#ifndef IBACOIN_TEST_TEST_IBACOIN_H
+#define IBACOIN_TEST_TEST_IBACOIN_H
 
 #include "fs.h"
 #include "scheduler.h"
 #include "txdb.h"
+#include "random.h"
 
 #include <boost/thread.hpp>
 

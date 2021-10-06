@@ -171,3 +171,10 @@ build*
 ibacoind.*
 ibacoind-new-gui.*
 /cov-int/
+
+#db4
+db4
+
+#IDEs
+.vscode
+.idea

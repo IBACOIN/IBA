@@ -16,6 +16,7 @@
 #include "util.h"
 #include "utilstrencodings.h"
 #include "test/test_ibacoin.h"
+#include "utilstrencodings.h"
 
 #include <boost/test/unit_test.hpp>
 

@@ -8,6 +8,7 @@
 
 #include "wallet/test/wallet_test_fixture.h"
 #include "test/librust/utiltest.h"
+#include "utilstrencodings.h"
 
 #include "rpc/server.h"
 #include "rpc/client.h"

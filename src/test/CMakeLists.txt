@@ -115,7 +115,6 @@ set(BITCOIN_TESTS
         ${CMAKE_CURRENT_SOURCE_DIR}/script_P2SH_tests.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/script_tests.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/script_standard_tests.cpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/scriptnum_tests.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/script_P2CS_tests.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/serialize_tests.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/sighash_tests.cpp

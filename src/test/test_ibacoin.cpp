@@ -4,7 +4,7 @@
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#define BOOST_TEST_MODULE ibacoin Test Suite
+#define BOOST_TEST_MODULE IBACoin Test Suite
 
 #include "test/test_ibacoin.h"
 
