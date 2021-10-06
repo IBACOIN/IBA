@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef IBACoin_CORE_NEW_GUI_IBACoinGUI_H
-#define IBACoin_CORE_NEW_GUI_IBACoinGUI_H
+#ifndef IBACOIN_CORE_NEW_GUI_IBACoinGUI_H
+#define IBACOIN_CORE_NEW_GUI_IBACoinGUI_H
 
 #if defined(HAVE_CONFIG_H)
 #include "config/ibacoin-config.h"
@@ -196,4 +196,4 @@ Q_SIGNALS:
 };
 
 
-#endif //IBACoin_CORE_NEW_GUI_IBACoinGUI_H
+#endif //IBACOIN_CORE_NEW_GUI_IBACoinGUI_H

@@ -4,8 +4,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or https://www.opensource.org/licenses/mit-license.php.
 
-#ifndef IBACoin_INTERFACES_WALLET_H
-#define IBACoin_INTERFACES_WALLET_H
+#ifndef IBACOIN_INTERFACES_WALLET_H
+#define IBACOIN_INTERFACES_WALLET_H
 
 #include <amount.h>
 #include "wallet/wallet.h"

@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef IBACoin_CORE_NEW_GUI_ADDRESSFILTERPROXYMODEL_H
-#define IBACoin_CORE_NEW_GUI_ADDRESSFILTERPROXYMODEL_H
+#ifndef IBACOIN_CORE_NEW_GUI_ADDRESSFILTERPROXYMODEL_H
+#define IBACOIN_CORE_NEW_GUI_ADDRESSFILTERPROXYMODEL_H
 
 #include <QSortFilterProxyModel>
 #include "addresstablemodel.h"
@@ -45,4 +45,4 @@ private:
 };
 
 
-#endif //IBACoin_CORE_NEW_GUI_ADDRESSFILTERPROXYMODEL_H
+#endif //IBACOIN_CORE_NEW_GUI_ADDRESSFILTERPROXYMODEL_H

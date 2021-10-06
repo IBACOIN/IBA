@@ -4,8 +4,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef IBACoin_CONSENSUS_UPGRADES_H
-#define IBACoin_CONSENSUS_UPGRADES_H
+#ifndef IBACOIN_CONSENSUS_UPGRADES_H
+#define IBACOIN_CONSENSUS_UPGRADES_H
 
 #include "consensus/params.h"
 #include "optional.h"
@@ -82,4 +82,4 @@ Optional<int> NextActivationHeight(
         int nHeight,
         const Consensus::Params& params);
 
-#endif // IBACoin_CONSENSUS_UPGRADES_H
+#endif // IBACOIN_CONSENSUS_UPGRADES_H

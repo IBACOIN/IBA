@@ -6,8 +6,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef IBACoin_UINT256_H
-#define IBACoin_UINT256_H
+#ifndef IBACOIN_UINT256_H
+#define IBACOIN_UINT256_H
 
 #include "arith_uint256.h"
 #include <assert.h>
@@ -142,4 +142,4 @@ const uint256 UINT256_ZERO = uint256();
 const uint256 UINT256_ONE = uint256("0000000000000000000000000000000000000000000000000000000000000001");
 const uint256 UINT256_MAX = uint256("ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
 
-#endif // IBACoin_UINT256_H
+#endif // IBACOIN_UINT256_H

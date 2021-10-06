@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or https://www.opensource.org/licenses/mit-license.php.
 
-#ifndef IBACoin_SAPLING_TEST_FIXTURE_H
-#define IBACoin_SAPLING_TEST_FIXTURE_H
+#ifndef IBACOIN_SAPLING_TEST_FIXTURE_H
+#define IBACOIN_SAPLING_TEST_FIXTURE_H
 
 #include "test/test_ibacoin.h"
 
@@ -17,4 +17,4 @@ struct SaplingTestingSetup : public TestingSetup {
 };
 
 
-#endif //IBACoin_SAPLING_TEST_FIXTURE_H
+#endif //IBACOIN_SAPLING_TEST_FIXTURE_H

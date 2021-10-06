@@ -6,8 +6,8 @@
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef IBACoin_LEGACY_MODIFIER_H
-#define IBACoin_LEGACY_MODIFIER_H
+#ifndef IBACOIN_LEGACY_MODIFIER_H
+#define IBACOIN_LEGACY_MODIFIER_H
 
 #include "chain.h"
 #include "stakeinput.h"
@@ -16,4 +16,4 @@
 bool GetOldStakeModifier(CStakeInput* stake, uint64_t& nStakeModifier);
 bool ComputeNextStakeModifier(const CBlockIndex* pindexPrev, uint64_t& nStakeModifier, bool& fGeneratedStakeModifier);
 
-#endif // IBACoin_LEGACY_MODIFIER_H
+#endif // IBACOIN_LEGACY_MODIFIER_H

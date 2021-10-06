@@ -1087,21 +1087,21 @@ public:
     }
 };
 
-const unsigned char IBACoin_PREVOUTS_HASH_PERSONALIZATION[crypto_generichash_blake2b_PERSONALBYTES] =
+const unsigned char IBACOIN_PREVOUTS_HASH_PERSONALIZATION[crypto_generichash_blake2b_PERSONALBYTES] =
         {'P','I','V','X','P','r','e','v','o','u','t','H','a','s','h'};
-const unsigned char IBACoin_SEQUENCE_HASH_PERSONALIZATION[crypto_generichash_blake2b_PERSONALBYTES] =
+const unsigned char IBACOIN_SEQUENCE_HASH_PERSONALIZATION[crypto_generichash_blake2b_PERSONALBYTES] =
         {'P','I','V','X','S','e','q','u','e','n','c','H','a','s','h'};
-const unsigned char IBACoin_OUTPUTS_HASH_PERSONALIZATION[crypto_generichash_blake2b_PERSONALBYTES] =
+const unsigned char IBACOIN_OUTPUTS_HASH_PERSONALIZATION[crypto_generichash_blake2b_PERSONALBYTES] =
         {'P','I','V','X','O','u','t','p','u','t','s','H','a','s','h'};
-const unsigned char IBACoin_SHIELDED_SPENDS_HASH_PERSONALIZATION[crypto_generichash_blake2b_PERSONALBYTES] =
+const unsigned char IBACOIN_SHIELDED_SPENDS_HASH_PERSONALIZATION[crypto_generichash_blake2b_PERSONALBYTES] =
         {'P','I','V','X','S','S','p','e','n','d','s','H','a','s','h'};
-const unsigned char IBACoin_SHIELDED_OUTPUTS_HASH_PERSONALIZATION[crypto_generichash_blake2b_PERSONALBYTES] =
+const unsigned char IBACOIN_SHIELDED_OUTPUTS_HASH_PERSONALIZATION[crypto_generichash_blake2b_PERSONALBYTES] =
         {'P','I','V','X','S','O','u','t','p','u','t','H','a','s','h'};
 
 
 
 uint256 GetPrevoutHash(const CTransaction& txTo) {
-    CBLAKE2bWriter ss(SER_GETHASH, 0, IBACoin_PREVOUTS_HASH_PERSONALIZATION);
+    CBLAKE2bWriter ss(SER_GETHASH, 0, IBACOIN_PREVOUTS_HASH_PERSONALIZATION);
     for (unsigned int n = 0; n < txTo.vin.size(); n++) {
         ss << txTo.vin[n].prevout;
     }
@@ -1109,7 +1109,7 @@ uint256 GetPrevoutHash(const CTransaction& txTo) {
 }
 
 uint256 GetSequenceHash(const CTransaction& txTo) {
-    CBLAKE2bWriter ss(SER_GETHASH, 0, IBACoin_SEQUENCE_HASH_PERSONALIZATION);
+    CBLAKE2bWriter ss(SER_GETHASH, 0, IBACOIN_SEQUENCE_HASH_PERSONALIZATION);
     for (unsigned int n = 0; n < txTo.vin.size(); n++) {
         ss << txTo.vin[n].nSequence;
     }
@@ -1117,7 +1117,7 @@ uint256 GetSequenceHash(const CTransaction& txTo) {
 }
 
 uint256 GetOutputsHash(const CTransaction& txTo) {
-    CBLAKE2bWriter ss(SER_GETHASH, 0, IBACoin_OUTPUTS_HASH_PERSONALIZATION);
+    CBLAKE2bWriter ss(SER_GETHASH, 0, IBACOIN_OUTPUTS_HASH_PERSONALIZATION);
     for (unsigned int n = 0; n < txTo.vout.size(); n++) {
         ss << txTo.vout[n];
     }
@@ -1126,7 +1126,7 @@ uint256 GetOutputsHash(const CTransaction& txTo) {
 
 uint256 GetShieldedSpendsHash(const CTransaction& txTo) {
     assert(txTo.sapData);
-    CBLAKE2bWriter ss(SER_GETHASH, 0, IBACoin_SHIELDED_SPENDS_HASH_PERSONALIZATION);
+    CBLAKE2bWriter ss(SER_GETHASH, 0, IBACOIN_SHIELDED_SPENDS_HASH_PERSONALIZATION);
     auto sapData = txTo.sapData;
     for (const auto& n : sapData->vShieldedSpend) {
         ss << n.cv;
@@ -1140,7 +1140,7 @@ uint256 GetShieldedSpendsHash(const CTransaction& txTo) {
 
 uint256 GetShieldedOutputsHash(const CTransaction& txTo) {
     assert(txTo.sapData);
-    CBLAKE2bWriter ss(SER_GETHASH, 0, IBACoin_SHIELDED_OUTPUTS_HASH_PERSONALIZATION);
+    CBLAKE2bWriter ss(SER_GETHASH, 0, IBACOIN_SHIELDED_OUTPUTS_HASH_PERSONALIZATION);
     auto sapData = txTo.sapData;
     for (const auto& n : sapData->vShieldedOutput) {
         ss << n;
@@ -1192,7 +1192,7 @@ uint256 SignatureHash(const CScript& scriptCode, const CTransaction& txTo, unsig
         if ((nHashType & 0x1f) != SIGHASH_SINGLE && (nHashType & 0x1f) != SIGHASH_NONE) {
             hashOutputs = cache ? cache->hashOutputs : GetOutputsHash(txTo);
         } else if ((nHashType & 0x1f) == SIGHASH_SINGLE && nIn < txTo.vout.size()) {
-            CBLAKE2bWriter ss(SER_GETHASH, 0, IBACoin_OUTPUTS_HASH_PERSONALIZATION);
+            CBLAKE2bWriter ss(SER_GETHASH, 0, IBACOIN_OUTPUTS_HASH_PERSONALIZATION);
             ss << txTo.vout[nIn];
             hashOutputs = ss.GetHash();
         }

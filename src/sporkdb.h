@@ -3,8 +3,8 @@
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef IBACoin_CSPORKDB_H
-#define IBACoin_CSPORKDB_H
+#ifndef IBACOIN_CSPORKDB_H
+#define IBACOIN_CSPORKDB_H
 
 #include "fs.h"
 #include "dbwrapper.h"
@@ -26,4 +26,4 @@ public:
 };
 
 
-#endif //IBACoin_CSPORKDB_H
+#endif //IBACOIN_CSPORKDB_H

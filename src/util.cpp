@@ -84,9 +84,9 @@
 #include <openssl/crypto.h>
 #include <openssl/rand.h>
 
-const char * const IBACoin_CONF_FILENAME = "ibacoin.conf";
-const char * const IBACoin_PID_FILENAME = "ibacoin.pid";
-const char * const IBACoin_MASTERNODE_CONF_FILENAME = "masternode.conf";
+const char * const IBACOIN_CONF_FILENAME = "ibacoin.conf";
+const char * const IBACOIN_PID_FILENAME = "ibacoin.pid";
+const char * const IBACOIN_MASTERNODE_CONF_FILENAME = "masternode.conf";
 
 
 // IBACoin only features
@@ -545,13 +545,13 @@ void ClearDatadirCache()
 
 fs::path GetConfigFile()
 {
-    fs::path pathConfigFile(gArgs.GetArg("-conf", IBACoin_CONF_FILENAME));
+    fs::path pathConfigFile(gArgs.GetArg("-conf", IBACOIN_CONF_FILENAME));
     return AbsPathForConfigVal(pathConfigFile, false);
 }
 
 fs::path GetMasternodeConfigFile()
 {
-    fs::path pathConfigFile(gArgs.GetArg("-mnconf", IBACoin_MASTERNODE_CONF_FILENAME));
+    fs::path pathConfigFile(gArgs.GetArg("-mnconf", IBACOIN_MASTERNODE_CONF_FILENAME));
     return AbsPathForConfigVal(pathConfigFile);
 }
 
@@ -596,7 +596,7 @@ fs::path AbsPathForConfigVal(const fs::path& path, bool net_specific)
 #ifndef WIN32
 fs::path GetPidFile()
 {
-    fs::path pathPidFile(gArgs.GetArg("-pid", IBACoin_PID_FILENAME));
+    fs::path pathPidFile(gArgs.GetArg("-pid", IBACOIN_PID_FILENAME));
     return AbsPathForConfigVal(pathPidFile);
 }
 

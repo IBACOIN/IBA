@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef IBACoin_STAKEINPUT_H
-#define IBACoin_STAKEINPUT_H
+#ifndef IBACOIN_STAKEINPUT_H
+#define IBACOIN_STAKEINPUT_H
 
 #include "chain.h"
 #include "streams.h"
@@ -56,4 +56,4 @@ public:
 };
 
 
-#endif //IBACoin_STAKEINPUT_H
+#endif //IBACOIN_STAKEINPUT_H

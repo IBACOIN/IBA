@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef IBACoin_CYCLINGVECTOR_H
-#define IBACoin_CYCLINGVECTOR_H
+#ifndef IBACOIN_CYCLINGVECTOR_H
+#define IBACOIN_CYCLINGVECTOR_H
 
 #include <sync.h>
 #include <vector>
@@ -34,4 +34,4 @@ public:
     std::vector<T> GetCache() const { LOCK(cs); return vec; }
 };
 
-#endif // IBACoin_CYCLINGVECTOR_H
+#endif // IBACOIN_CYCLINGVECTOR_H

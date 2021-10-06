@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or https://www.opensource.org/licenses/mit-license.php.
 
-#ifndef IBACoin_WARNINGS_H
-#define IBACoin_WARNINGS_H
+#ifndef IBACOIN_WARNINGS_H
+#define IBACOIN_WARNINGS_H
 
 #include <stdlib.h>
 #include <string>
@@ -18,4 +18,4 @@ std::string GetWarnings(const std::string& strFor);
 
 static const bool DEFAULT_TESTSAFEMODE = false;
 
-#endif //IBACoin_WARNINGS_H
+#endif //IBACOIN_WARNINGS_H
