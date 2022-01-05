@@ -172,9 +172,30 @@ ibacoind.*
 ibacoind-new-gui.*
 /cov-int/
 
+#cmake
+CMakeFiles
+CMakeCache.txt
+
 #db4
 db4
 
 #IDEs
 .vscode
 .idea
+
+#Runtime
+/src/*.dat
+/src/.lock
+/src/.cookie
+**/blocks/index/**
+**/database/log.*
+**/database/CURRENT
+**/database/LOCK
+**/database/LOG
+**/database/MANIFEST-*
+**/sporks/log.*
+**/sporks/CURRENT
+**/sporks/LOCK
+**/sporks/LOG
+**/sporks/MANIFEST-*
+masternode.conf
