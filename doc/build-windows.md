@@ -118,6 +118,11 @@ or even without tests for quicker builds:
 
     cd depends && make HOST=x86_64-w64-mingw32 && cd .. && ./autogen.sh && CONFIG_SITE=$PWD/depends/x86_64-w64-mingw32/share/config.site ./configure --prefix=/ --disable-online-rust --disable-tests && make
 
+Bundle together using:
+
+    rsync -r -f '+ *.exe' -f '+ **/' -f '- *' --prune-empty-dirs ./src/ ./build/
+    echo 'PUSHD "%~dp0" && XCOPY "params\" "%APPDATA%\IBACoinParams\" /E /H /C /R /Q /Y' > $PWD/build/params-inst.bat && $PWD/util/fetch-params.sh $PWD/build/params
+
 ## Depends system
 
 For further documentation on the depends system see [README.md](../depends/README.md) in the depends directory.
