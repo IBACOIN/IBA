@@ -121,7 +121,7 @@ or even without tests for quicker builds:
 Bundle together using:
 
     rsync -r -f '+ *.exe' -f '+ **/' -f '- *' --prune-empty-dirs ./src/ ./build/
-    echo 'PUSHD "%~dp0" && XCOPY "params\" "%APPDATA%\IBACoinParams\" /E /H /C /R /Q /Y' > $PWD/build/params-inst.bat && $PWD/util/fetch-params.sh $PWD/build/params
+    echo 'PUSHD "%~dp0" && XCOPY "params\" "%APPDATA%\IBACoinParams\" /E /H /C /R /Q /Y' > $PWD/build/install-params.bat && $PWD/util/fetch-params.sh $PWD/build/params
 
 ## Depends system
 
