@@ -6,6 +6,7 @@
 
 #include "test/test_ibacoin.h"
 #include "test/librust/utiltest.h"
+#include "utilstrencodings.h"
 
 #include "sapling/address.h"
 #include "sapling/sapling_util.h"

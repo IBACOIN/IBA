@@ -43,8 +43,8 @@ Build IBA Coin
 
 1. Clone the IBA Coin source code:
 
-        git clone https://github.com/ibacoin-project/ibacoin
-        cd ibacoin
+        git clone https://github.com/IBACOIN/IBA
+        cd IBA
 
 2.  Make the Homebrew OpenSSL headers visible to the configure script  (do ```brew info openssl``` to find out why this is necessary, or if you use Homebrew with installation folders different from the default).
 

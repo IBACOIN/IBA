@@ -5,8 +5,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or https://www.opensource.org/licenses/mit-license.php.
 
-#ifndef IBACoin_BLOCKASSEMBLER_H
-#define IBACoin_BLOCKASSEMBLER_H
+#ifndef IBACOIN_BLOCKASSEMBLER_H
+#define IBACOIN_BLOCKASSEMBLER_H
 
 #include "primitives/block.h"
 #include "txmempool.h"
@@ -104,4 +104,4 @@ bool CreateCoinbaseTx(CBlock* pblock, const CScript& scriptPubKeyIn, CBlockIndex
 // Visible for testing purposes only
 uint256 CalculateSaplingTreeRoot(CBlock* pblock, int nHeight, const CChainParams& chainparams);
 
-#endif // IBACoin_BLOCKASSEMBLER_H
+#endif // IBACOIN_BLOCKASSEMBLER_H

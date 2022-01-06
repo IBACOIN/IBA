@@ -5,8 +5,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef IBACoin_AMOUNT_H
-#define IBACoin_AMOUNT_H
+#ifndef IBACOIN_AMOUNT_H
+#define IBACOIN_AMOUNT_H
 
 #include <stdint.h>
 
@@ -16,4 +16,4 @@ typedef int64_t CAmount;
 static const CAmount COIN = 1000000;
 static const CAmount CENT = 10000;
 
-#endif //  IBACoin_AMOUNT_H
+#endif //  IBACOIN_AMOUNT_H

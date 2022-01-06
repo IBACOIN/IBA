@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef IBACoin_PFBorderImage_H
-#define IBACoin_PFBorderImage_H
+#ifndef IBACOIN_PFBorderImage_H
+#define IBACOIN_PFBorderImage_H
 
 #include <QPainter>
 #include <QPixmap>
@@ -53,4 +53,4 @@ protected:
 
 };
 
-#endif //IBACoin_PFBorderImage_H
+#endif //IBACOIN_PFBorderImage_H

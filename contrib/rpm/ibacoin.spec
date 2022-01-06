@@ -24,18 +24,18 @@ URL:		https://ibacoin.org/
 Source0:	https://ibacoin.org/bin/ibacoin-core-%{version}/ibacoin-%{version}.tar.gz
 Source1:	http://download.oracle.com/berkeley-db/db-%{bdbv}.NC.tar.gz
 
-Source10:	https://raw.githubusercontent.com/ibacoin-project/ibacoin/v%{version}/contrib/debian/examples/ibacoin.conf
+Source10:	https://raw.githubusercontent.com/IBACOIN/IBA/v%{version}/contrib/debian/examples/ibacoin.conf
 
 #man pages
-Source20:	https://raw.githubusercontent.com/ibacoin-project/ibacoin/v%{version}/doc/man/ibacoind.1
-Source21:	https://raw.githubusercontent.com/ibacoin-project/ibacoin/v%{version}/doc/man/ibacoin-cli.1
-Source22:	https://raw.githubusercontent.com/ibacoin-project/ibacoin/v%{version}/doc/man/ibacoin-qt.1
+Source20:	https://raw.githubusercontent.com/IBACOIN/IBA/v%{version}/doc/man/ibacoind.1
+Source21:	https://raw.githubusercontent.com/IBACOIN/IBA/v%{version}/doc/man/ibacoin-cli.1
+Source22:	https://raw.githubusercontent.com/IBACOIN/IBA/v%{version}/doc/man/ibacoin-qt.1
 
 #selinux
-Source30:	https://raw.githubusercontent.com/ibacoin-project/ibacoin/v%{version}/contrib/rpm/ibacoin.te
+Source30:	https://raw.githubusercontent.com/IBACOIN/IBA/v%{version}/contrib/rpm/ibacoin.te
 # Source31 - what about ibacoin-tx and bench_ibacoin ???
-Source31:	https://raw.githubusercontent.com/ibacoin-project/ibacoin/v%{version}/contrib/rpm/ibacoin.fc
-Source32:	https://raw.githubusercontent.com/ibacoin-project/ibacoin/v%{version}/contrib/rpm/ibacoin.if
+Source31:	https://raw.githubusercontent.com/IBACOIN/IBA/v%{version}/contrib/rpm/ibacoin.fc
+Source32:	https://raw.githubusercontent.com/IBACOIN/IBA/v%{version}/contrib/rpm/ibacoin.if
 
 Source100:	https://upload.wikimedia.org/wikipedia/commons/4/46/Bitcoin.svg
 

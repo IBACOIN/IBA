@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or https://www.opensource.org/licenses/mit-license.php.
 
-#ifndef IBACoin_BALANCEBUBBLE_H
-#define IBACoin_BALANCEBUBBLE_H
+#ifndef IBACOIN_BALANCEBUBBLE_H
+#define IBACOIN_BALANCEBUBBLE_H
 
 #include <QWidget>
 #include <QString>
@@ -33,4 +33,4 @@ private:
     QTimer* hideTimer{nullptr};
 };
 
-#endif //IBACoin_BALANCEBUBBLE_H
+#endif //IBACOIN_BALANCEBUBBLE_H

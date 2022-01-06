@@ -4,8 +4,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or https://www.opensource.org/licenses/mit-license.php .
 
-#ifndef IBACoin_UTIL_TEST_H
-#define IBACoin_UTIL_TEST_H
+#ifndef IBACOIN_UTIL_TEST_H
+#define IBACOIN_UTIL_TEST_H
 
 #include "sapling/address.h"
 #include "sapling/incrementalmerkletree.h"
@@ -78,4 +78,4 @@ CWalletTx GetValidSaplingReceive(const Consensus::Params& consensusParams,
                                  bool genNewKey = false,
                                  const CWallet* pwalletIn = nullptr);
 
-#endif // IBACoin_UTIL_TEST_H
+#endif // IBACOIN_UTIL_TEST_H

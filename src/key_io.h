@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef IBACoin_KEY_IO_H
-#define IBACoin_KEY_IO_H
+#ifndef IBACOIN_KEY_IO_H
+#define IBACOIN_KEY_IO_H
 
 #include "chainparams.h"
 #include "key.h"
@@ -28,4 +28,4 @@ namespace KeyIO {
 
 }
 
-#endif //IBACoin_KEY_IO_H
+#endif //IBACOIN_KEY_IO_H

@@ -28,7 +28,7 @@ Drag IBACoin-Qt to your applications folder, and then run IBACoin-Qt.
 
 ### Need Help?
 
-* See the documentation at the [IBACoin Wiki](https://github.com/IBACoin-Project/IBACoin/wiki)
+* See the documentation at the [IBACoin Wiki](https://github.com/IBACOIN/IBA/wiki)
 for help and more information.
 * Ask for help on [BitcoinTalk](https://bitcointalk.org/index.php?topic=1262920.0) or on the [IBACoin Forum](http://forum.ibacoin.org/).
 * Join our Discord server [Discord Server](https://discord.ibacoin.org)

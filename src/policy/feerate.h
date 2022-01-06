@@ -4,8 +4,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef IBACoin_POLICY_FEERATE_H
-#define IBACoin_POLICY_FEERATE_H
+#ifndef IBACOIN_POLICY_FEERATE_H
+#define IBACOIN_POLICY_FEERATE_H
 
 #include "amount.h"
 #include "serialize.h"
@@ -46,4 +46,4 @@ public:
     }
 };
 
-#endif //  IBACoin_POLICY_FEERATE_H
+#endif //  IBACOIN_POLICY_FEERATE_H

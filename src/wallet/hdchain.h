@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef IBACoin_HDCHAIN_H
-#define IBACoin_HDCHAIN_H
+#ifndef IBACOIN_HDCHAIN_H
+#define IBACOIN_HDCHAIN_H
 
 #include "key.h"
 
@@ -73,4 +73,4 @@ public:
     }
 };
 
-#endif // IBACoin_HDCHAIN_H
+#endif // IBACOIN_HDCHAIN_H

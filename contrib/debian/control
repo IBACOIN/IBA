@@ -29,8 +29,8 @@ Build-Depends: debhelper,
  dh-systemd
 Standards-Version: 3.9.2
 Homepage: http://www.ibacoin.org
-Vcs-Git: git://github.com/IBACoin-Project/IBACoin.git
-Vcs-Browser: http://github.com/IBACoin-Project/IBACoin
+Vcs-Git: git://github.com/IBACOIN/IBA.git
+Vcs-Browser: http://github.com/IBACOIN/IBA
 
 Package: ibacoind
 Architecture: any

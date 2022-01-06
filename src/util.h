@@ -44,9 +44,9 @@ public:
     boost::signals2::signal<std::string (const char* psz)> Translate;
 };
 
-extern const char * const IBACoin_CONF_FILENAME;
-extern const char * const IBACoin_PID_FILENAME;
-extern const char * const IBACoin_MASTERNODE_CONF_FILENAME;
+extern const char * const IBACOIN_CONF_FILENAME;
+extern const char * const IBACOIN_PID_FILENAME;
+extern const char * const IBACOIN_MASTERNODE_CONF_FILENAME;
 extern const char * const DEFAULT_DEBUGLOGFILE;
 
 //IBACoin only features

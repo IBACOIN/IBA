@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef IBACoin_SAPLINGSCRIPTPUBKEYMAN_H
-#define IBACoin_SAPLINGSCRIPTPUBKEYMAN_H
+#ifndef IBACOIN_SAPLINGSCRIPTPUBKEYMAN_H
+#define IBACOIN_SAPLINGSCRIPTPUBKEYMAN_H
 
 #include "consensus/consensus.h"
 #include "sapling/note.h"
@@ -423,4 +423,4 @@ private:
     TxNullifiers mapTxSaplingNullifiers;
 };
 
-#endif //IBACoin_SAPLINGSCRIPTPUBKEYMAN_H
+#endif //IBACOIN_SAPLINGSCRIPTPUBKEYMAN_H

@@ -435,6 +435,30 @@ crypto_libbitcoin_crypto_a_SOURCES = \
   crypto/sph_skein.h \
   crypto/sph_types.h
 
+# libzerocoin library
+libzerocoin_libbitcoin_zerocoin_a_CPPFLAGS = $(AM_CPPFLAGS) $(BOOST_CPPFLAGS)
+libzerocoin_libbitcoin_zerocoin_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+libzerocoin_libbitcoin_zerocoin_a_SOURCES = \
+  libzerocoin/test/bignum.h \
+  libzerocoin/test/Coin.h \
+  libzerocoin/test/CoinRandomnessSchnorrSignature.h \
+  libzerocoin/test/CoinSpend.h \
+  libzerocoin/test/Commitment.h \
+  libzerocoin/test/Denominations.h \
+  libzerocoin/test/ParamGeneration.h \
+  libzerocoin/test/Params.h \
+  libzerocoin/test/SpendType.h \
+  libzerocoin/test/ZerocoinDefines.h \
+  zpiv/zpivmodule.h \
+  libzerocoin/test/bignum.cpp \
+  libzerocoin/test/Coin.cpp \
+  libzerocoin/test/CoinRandomnessSchnorrSignature.cpp \
+  libzerocoin/test/CoinSpend.cpp \
+  libzerocoin/test/Denominations.cpp \
+  libzerocoin/test/ParamGeneration.cpp \
+  libzerocoin/test/Params.cpp \
+  zpiv/zpivmodule.cpp
+
 # common: shared between ibacoind, and ibacoin-qt and non-server tools
 libbitcoin_common_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
 libbitcoin_common_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)

@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef IBACoin_ADDRESSHOLDER_H
-#define IBACoin_ADDRESSHOLDER_H
+#ifndef IBACOIN_ADDRESSHOLDER_H
+#define IBACOIN_ADDRESSHOLDER_H
 
 #include <QWidget>
 #include <QColor>
@@ -39,4 +39,4 @@ public:
 };
 
 
-#endif //IBACoin_ADDRESSHOLDER_H
+#endif //IBACOIN_ADDRESSHOLDER_H

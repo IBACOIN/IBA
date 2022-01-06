@@ -4,8 +4,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef IBACoin_SAPLING_TRANSACTION_H
-#define IBACoin_SAPLING_TRANSACTION_H
+#ifndef IBACOIN_SAPLING_TRANSACTION_H
+#define IBACOIN_SAPLING_TRANSACTION_H
 
 #include "serialize.h"
 #include "streams.h"
@@ -161,4 +161,4 @@ public:
 };
 
 
-#endif //IBACoin_SAPLING_TRANSACTION_H
+#endif //IBACOIN_SAPLING_TRANSACTION_H

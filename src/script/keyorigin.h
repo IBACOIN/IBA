@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef IBACoin_SCRIPT_KEYORIGIN_H
-#define IBACoin_SCRIPT_KEYORIGIN_H
+#ifndef IBACOIN_SCRIPT_KEYORIGIN_H
+#define IBACOIN_SCRIPT_KEYORIGIN_H
 
 #include <serialize.h>
 #include <vector>
@@ -52,4 +52,4 @@ struct KeyOriginInfo
     }
 };
 
-#endif // IBACoin_SCRIPT_KEYORIGIN_H
+#endif // IBACOIN_SCRIPT_KEYORIGIN_H

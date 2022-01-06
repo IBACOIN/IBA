@@ -1,8 +1,8 @@
-IBA Coin version v5.2.0 is now available from:  <https://github.com/ibacoin-project/ibacoin/releases>
+IBA Coin version v5.2.0 is now available from:  <https://github.com/IBACOIN/IBA/releases>
 
 This is a new major version release, including various bug fixes and visual improvements.
 
-Please report bugs using the issue tracker at github: <https://github.com/ibacoin-project/ibacoin/issues>
+Please report bugs using the issue tracker at github: <https://github.com/IBACOIN/IBA/issues>
 
 Mandatory Update
 ==============

@@ -8,7 +8,7 @@ architectures:
 packages:
 - "faketime"
 remotes:
-- "url": "https://github.com/ibacoin-project/ibacoin-detached-sigs.git"
+- "url": "https://github.com/IBACOIN/IBA-detached-sigs.git"
   "dir": "signature"
 files:
 - "ibacoin-osx-unsigned.tar.gz"

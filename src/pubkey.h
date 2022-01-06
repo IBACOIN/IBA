@@ -5,8 +5,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef IBACoin_PUBKEY_H
-#define IBACoin_PUBKEY_H
+#ifndef IBACOIN_PUBKEY_H
+#define IBACOIN_PUBKEY_H
 
 #include "hash.h"
 #include "serialize.h"
@@ -265,4 +265,4 @@ public:
     ~ECCVerifyHandle();
 };
 
-#endif // IBACoin_PUBKEY_H
+#endif // IBACOIN_PUBKEY_H

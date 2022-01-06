@@ -4,8 +4,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef IBACoin_KEY_IO_SAPLING_H
-#define IBACoin_KEY_IO_SAPLING_H
+#ifndef IBACOIN_KEY_IO_SAPLING_H
+#define IBACOIN_KEY_IO_SAPLING_H
 
 #include "chainparams.h"
 #include "sapling/zip32.h"
@@ -24,4 +24,4 @@ namespace KeyIO {
     libzcash::SpendingKey DecodeSpendingKey(const std::string& str);
 }
 
-#endif //IBACoin_KEY_IO_SAPLING_H
+#endif //IBACOIN_KEY_IO_SAPLING_H

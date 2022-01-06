@@ -428,7 +428,7 @@
          </property>
          <property name="text">
           <string>Language missing or translation incomplete? Help contributing translations here:
-https://www.transifex.com/ibacoin-project/ibacoin-project-translations</string>
+https://www.transifex.com/IBACOIN/IBA-project-translations</string>
          </property>
          <property name="wordWrap">
           <bool>true</bool>

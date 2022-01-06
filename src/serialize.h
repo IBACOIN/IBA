@@ -5,8 +5,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef IBACoin_SERIALIZE_H
-#define IBACoin_SERIALIZE_H
+#ifndef IBACOIN_SERIALIZE_H
+#define IBACOIN_SERIALIZE_H
 
 #include <algorithm>
 #include <array>
@@ -1127,4 +1127,4 @@ size_t GetSerializeSize(const S& s, const T& t)
     return (CSizeComputer(s.GetType(), s.GetVersion()) << t).size();
 }
 
-#endif // IBACoin_SERIALIZE_H
+#endif // IBACOIN_SERIALIZE_H

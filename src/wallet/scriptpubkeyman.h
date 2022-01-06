@@ -4,8 +4,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef IBACoin_SCRIPTPUBKEYMAN_H
-#define IBACoin_SCRIPTPUBKEYMAN_H
+#ifndef IBACOIN_SCRIPTPUBKEYMAN_H
+#define IBACOIN_SCRIPTPUBKEYMAN_H
 
 #include "wallet/hdchain.h"
 #include "wallet/wallet.h"
@@ -161,4 +161,4 @@ private:
 };
 
 
-#endif //IBACoin_SCRIPTPUBKEYMAN_H
+#endif //IBACOIN_SCRIPTPUBKEYMAN_H

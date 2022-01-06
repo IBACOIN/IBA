@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef IBACoin_PAIRRESULT_H
-#define IBACoin_PAIRRESULT_H
+#ifndef IBACOIN_PAIRRESULT_H
+#define IBACOIN_PAIRRESULT_H
 
 
 class PairResult {
@@ -18,4 +18,4 @@ public:
 };
 
 
-#endif //IBACoin_PAIRRESULT_H
+#endif //IBACOIN_PAIRRESULT_H
